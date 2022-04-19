@@ -16,17 +16,49 @@ import React from "react";
 
 // import { cilSpeedometer, cilPuzzle } from '@coreui/icons';
 // import { CIcon } from "@coreui/icons-react";
-import { cilList, cilPuzzle, cilShieldAlt, cilSpeedometer } from "@coreui/icons";
-import { CSidebar,CSidebarBrand,CSidebarNav,CBadge, CNavGroup, CNavItem, CNavTitle, CSidebarToggler } from "@coreui/react";
+import {
+  cilList,
+  cilPuzzle,
+  cilShieldAlt,
+  cilSpeedometer,
+} from "@coreui/icons";
+import {
+  CSidebar,
+  CSidebarBrand,
+  CSidebarNav,
+  CBadge,
+  CNavGroup,
+  CNavItem,
+  CNavTitle,
+  CSidebarToggler,
+  CContainer,
+  CRow,
+  CCol,
+} from "@coreui/react";
 
 import CIcon from "@coreui/icons-react";
 import Sidebar from "../common/Sidebar";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
 function Home() {
   return (
-    <>
-     <Sidebar/>
-     
-    </>
+    <div className="Home">
+      {/* <Header />
+      <Sidebar /> */}
+      {/* <CContainer> */}
+      <CRow className="align-item-start">
+        <CCol xs={1} className="home-slide-bar">
+          {" "}
+          <Sidebar />
+        </CCol>
+
+        <CCol className="home-content">
+          <Header />
+        </CCol>
+      </CRow>
+      {/* </CContainer> */}
+        <Outlet />
+    </div>
   );
 }
 export default Home;

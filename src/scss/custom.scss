@@ -1,0 +1,14 @@
+/** @format */
+@import 'constant','other';
+.App {
+  text-align: center;
+}
+.Home {
+  .home-slide-bar {
+    z-index: 999;
+  }
+  .home-content {
+    // padding-left: 30%;
+    z-index: 10;
+  }
+}
