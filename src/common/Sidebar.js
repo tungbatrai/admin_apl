@@ -19,192 +19,74 @@ import {
   CNavTitle,
   CSidebarToggler,
 } from "@coreui/react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { sideBar } from "../router/sideBarPath";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import CIcon from "@coreui/icons-react";
 import { Link } from "react-router-dom";
 function Sidebar() {
   let navigate = useNavigate();
   const [show, setShow] = useState(false);
+  const [dataSideBar, setDataSideBar] = useState([]);
+  useEffect(() => {
+    console.log(sideBar);
+    setDataSideBar(sideBar);
+  }, []);
   return (
     <>
-      <CSidebar className="sidebar">
-        <CSidebarBrand>APL</CSidebarBrand>
+      <CSidebar className={show ? "sidebar" : "negative-sidebar"}>
+        <CSidebarBrand className="">APL</CSidebarBrand>
         <CSidebarNav>
-          <CNavItem>
-            <NavLink tag={Link} to="/home" className="sidebar-navLink nav-link">
-              Admin management
-            </NavLink>
-          </CNavItem>
-          <CNavItem>
-            <NavLink tag={Link} to="/body" className="sidebar-navLink nav-link">
-              Admission ticket management
-            </NavLink>
-          </CNavItem>
-          <CNavGroup toggler="Admission check management ">
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/body"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Submitted ticket management
-              </NavLink>
-            </CNavItem>
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/home"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Admission check verification code management item
-              </NavLink>
-            </CNavItem>
-          </CNavGroup>
-          <CNavItem>
-            <NavLink tag={Link} to="/body" className="sidebar-navLink nav-link">
-              Point management
-            </NavLink>
-          </CNavItem>
-
-          <CNavGroup toggler="Product management">
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/body"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Submitted ticket management
-              </NavLink>
-            </CNavItem>
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/home"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Admission check verification code management item
-              </NavLink>
-            </CNavItem>
-          </CNavGroup>
-          <CNavItem>
-            <NavLink tag={Link} to="/body" className="sidebar-navLink nav-link">
-              Tournament management
-            </NavLink>
-          </CNavItem>
-          <CNavItem>
-            <NavLink tag={Link} to="/body" className="sidebar-navLink nav-link">
-              Result detail management
-            </NavLink>
-          </CNavItem>
-
-          <CNavGroup toggler="Member management">
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/body"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Submitted ticket management
-              </NavLink>
-            </CNavItem>
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/home"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Admission check verification code management item
-              </NavLink>
-            </CNavItem>
-          </CNavGroup>
-          <CNavGroup toggler="Content management">
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/body"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Submitted ticket management
-              </NavLink>
-            </CNavItem>
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/home"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Admission check verification code management item
-              </NavLink>
-            </CNavItem>
-          </CNavGroup>
-          <CNavGroup toggler="Statistics management">
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/body"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Submitted ticket management
-              </NavLink>
-            </CNavItem>
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/home"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Admission check verification code management item
-              </NavLink>
-            </CNavItem>
-          </CNavGroup>
-          <CNavGroup toggler="Promotion/ banner management ">
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/body"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Submitted ticket management
-              </NavLink>
-            </CNavItem>
-            <CNavItem className="text-start">
-              <NavLink
-                tag={Link}
-                to="/home"
-                className="sidebar-navLink-chil nav-link"
-              >
-                Admission check verification code management item
-              </NavLink>
-            </CNavItem>
-          </CNavGroup>
+          {dataSideBar.map((item) => {
+            return (
+              <>
+                {item.type === 1 ? (
+                  <Menu name={item.name} url={item.url} />
+                ) : (
+                  <GroupMenu name={item.name} url={item.url} chil={item.chil} />
+                )}
+              </>
+            );
+          })}
+          {/* <GroupMenu /> */}
         </CSidebarNav>
+
         <CSidebarToggler className="w-100" />
       </CSidebar>
+      {/* <Outlet  /> */}
     </>
   );
 }
 export default Sidebar;
 
-function Menu() {
+function Menu({ name, url }) {
   return (
     <CNavItem className="text-start">
-      <NavLink tag={Link} to="/home" className="sidebar-navLink-chil nav-link">
-        Admission check verification code management item
+      <NavLink
+        tag={Link}
+        to={`${url}`}
+        className="sidebar-navLink-chil nav-link"
+      >
+        {name}
       </NavLink>
     </CNavItem>
   );
 }
-function GroupMenu() {
-  <CNavGroup toggler="Promotion/ banner management ">
-    <CNavItem className="text-start">
-      <NavLink tag={Link} to="/body" className="sidebar-navLink-chil nav-link">
-        Submitted ticket management
-      </NavLink>
-    </CNavItem>
-    <CNavItem className="text-start">
-      <NavLink tag={Link} to="/home" className="sidebar-navLink-chil nav-link">
-        Admission check verification code management item
-      </NavLink>
-    </CNavItem>
-  </CNavGroup>;
+function GroupMenu({ name, url, chil }) {
+  return (
+    <CNavGroup toggler={name}>
+      {chil.map((item) => {
+        return (
+          <CNavItem className="text-start">
+            <NavLink
+              tag={Link}
+              to={`${url}/${item.url}`}
+              className="sidebar-navLink-chil nav-link"
+            >
+              {item.name}
+            </NavLink>
+          </CNavItem>
+        );
+      })}
+    </CNavGroup>
+  );
 }

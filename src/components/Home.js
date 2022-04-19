@@ -39,25 +39,29 @@ import {
 import CIcon from "@coreui/icons-react";
 import Sidebar from "../common/Sidebar";
 import Header from "./Header";
+import Body from "./Body";
 import { Outlet } from "react-router-dom";
 function Home() {
   return (
-    <div className="Home">
+    <div className="Home ">
       {/* <Header />
       <Sidebar /> */}
       {/* <CContainer> */}
-      <CRow className="align-item-start">
+      <CRow className="align-item-start w-100">
         <CCol xs={1} className="home-slide-bar">
-          {" "}
           <Sidebar />
         </CCol>
 
         <CCol className="home-content">
           <Header />
+          <div  style={{ marginTop: "73px" }}>
+          <Body />
+          </div>
+        
         </CCol>
       </CRow>
       {/* </CContainer> */}
-        <Outlet />
+      {/* <Outlet /> */}
     </div>
   );
 }

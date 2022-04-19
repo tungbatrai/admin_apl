@@ -23,7 +23,7 @@ function Header() {
   const [visible, setVisible] = useState(true);
   return (
     <>
-      <CHeader className="pdl-10">
+      <CHeader className="pdl-10 fix-top ">
         <CContainer fluid>
           {/* <CHeaderBrand href="#">Header</CHeaderBrand> */}
           <CHeaderToggler onClick={() => setVisible(!visible)} />

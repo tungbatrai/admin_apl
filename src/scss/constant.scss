@@ -11,8 +11,14 @@
 .sidebar {
   height: 100vh;
   min-width: 300px;
+  position: fixed !important;
+  top: 0;
 }
 .negative-sidebar {
+  height: 100vh;
+  min-width: 50px;
+  position: fixed !important;
+  top: 0;
 }
 .sidebar-navLink {
   color: #ffffff99 !important;
@@ -27,9 +33,9 @@
   text-align: left;
 }
 .sidebar-navLink-chil {
-    text-decoration: none;
-    color: #ffffff99 !important;
-    white-space: normal !important;
+  text-decoration: none;
+  color: #ffffff99 !important;
+  white-space: normal !important;
 }
 .sidebar-nav .nav-group-items .nav-link {
   padding-left: 1.5rem !important;

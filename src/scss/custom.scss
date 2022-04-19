@@ -4,11 +4,18 @@
   text-align: center;
 }
 .Home {
+  //slide
   .home-slide-bar {
     z-index: 999;
   }
   .home-content {
     // padding-left: 30%;
     z-index: 10;
+  }
+  // header
+  .fix-top {
+    position: fixed !important;
+    top: 0;
+    width: 90%;
   }
 }

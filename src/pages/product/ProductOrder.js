@@ -1,5 +1,7 @@
+/** @format */
+
 import React, { useEffect, useState } from "react";
-function ProductOrde() {
+function ProductOrder() {
   return <>Product order list </>;
 }
-export default ProductOrde;
+export default ProductOrder;

@@ -14,15 +14,18 @@ import Home from "./Home";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import Login from "../pages/Login";
 import Body from "./Body";
+import Admin from "../pages/admin/Admin";
+import AdmissionTicket from "../pages/admissionTicket/AdmissionTicket";
 function DefaultLayout() {
   return (
     <>
       <BrowserRouter>
         
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route path="home" element={<Body />} />{" "}
-            <Route path="body" element={<Body />} />
+          {/* <Route path="/" element={<Home />}> */}
+          <Route path="*" element={<Home />}>
+            {/* <Route path="admissionTicket" element={<AdmissionTicket />} />
+            <Route path="admin" element={<Admin />} /> */}
             {/* <Route path="content" element={<Content />} />
             <Route path="home" element={<Home />} />
             <Route path="*" element={<Navigate replace to="/" />} /> */}
