@@ -1,5 +1,33 @@
 /** @format */
-
+//border 
+.border-radius5 {
+  border-radius: 5px !important;
+}
+//width 
+.w-100p {
+  width: 100px;
+}
+.w-104p {
+  width: 104px;
+}
+.w-155p {
+  width: 155px;
+}
+.w-165p {
+  width: 165px;
+}
+//height 
+.h-80 {
+  height: 80%;
+}
+//min-width 
+.min-width104p {
+  min-width: 104px;
+}
+//max-width 
+.max-width160p {
+  max-width: 160px;
+}
 // padding
 .pdl-10 {
   padding-left: 10% !important;
@@ -7,6 +35,11 @@
 // max-height
 .max-height45 {
   max-height: 45px;
+}
+//button 
+.b-body-header {
+  @extend .max-width160p;
+  word-break: break-word;
 }
 .sidebar {
   height: 100vh;

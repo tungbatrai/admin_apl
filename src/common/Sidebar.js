@@ -28,7 +28,6 @@ function Sidebar() {
   const [show, setShow] = useState(false);
   const [dataSideBar, setDataSideBar] = useState([]);
   useEffect(() => {
-    console.log(sideBar);
     setDataSideBar(sideBar);
   }, []);
   return (

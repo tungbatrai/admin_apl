@@ -47,19 +47,31 @@ function Home() {
       {/* <Header />
       <Sidebar /> */}
       {/* <CContainer> */}
-      <CRow className="align-item-start w-100">
-        <CCol xs={1} className="home-slide-bar">
+      {/* <CRow className="align-item-start w-100"> */}
+      <div class="d-flex bd-highlight px-4">
+        <div class="p-2 flex-shrink-1 bd-highlight home-slide-bar">
+          <Sidebar />
+        </div>
+        <div class="p-2 w-100 bd-highlight">
+          <div className="home-content">
+            <Header />
+            <div style={{ marginTop: "73px", marginLeft: "40px" }}>
+              <Body className="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <CCol xs={1} className="home-slide-bar">
           <Sidebar />
         </CCol>
 
         <CCol className="home-content">
           <Header />
-          <div  style={{ marginTop: "73px" }}>
-          <Body />
+          <div style={{ marginTop: "73px", marginLeft: "182px" }}>
+            <Body className="" />
           </div>
-        
-        </CCol>
-      </CRow>
+        </CCol> */}
+      {/* </CRow> */}
       {/* </CContainer> */}
       {/* <Outlet /> */}
     </div>

@@ -2,11 +2,15 @@
 @import 'constant','other';
 .App {
   text-align: center;
+  font-family: 'Noto Sans KR' !important;
+
 }
 .Home {
+  font-size: 18px;
   //slide
   .home-slide-bar {
     z-index: 999;
+    width: 265px;
   }
   .home-content {
     // padding-left: 30%;
@@ -18,4 +22,37 @@
     top: 0;
     width: 90%;
   }
+  .user-icon {
+    position: fixed;
+    right: 70px;
+    top: 5px;
+  }
+  .user-menu {
+    position: fixed;
+    width: 140px;
+    right: 29px;
+  }
+  //body 
+  //header-body 
+  .header-body {
+    
+    .header-heading {
+
+    }
+    .header-search {
+      border-radius: 5px;
+      background-color: #a2a1a57c;
+    }
+    Button  {
+      background-color: #fff;
+      border-color: #000;
+      font-size: 15px;
+      color: #000;
+      font-family: 'Noto Sans KR' !important;
+    }
+    .header-select {
+      height: 38px;
+    }
+  }
+  
 }
