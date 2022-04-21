@@ -25,15 +25,17 @@ function HeaderBody(props) {
         <CCol xs={4}>
           <CRow className="h-80">
             <div className="d-flex align-items-center justify-content-center">
-              <h3>{props.header}</h3>
+              <h3>{props.header.name}</h3>
             </div>
           </CRow>
           <CRow>
             <div className="d-flex align-items-center justify-content-start">
               <div className="pe-2">Total 50 result</div>
-              <CButton className="b-body-header px-1">
-                Provide/Subtract point
-              </CButton>
+              {props.header.button?.map((item) => (
+                <CButton color="light" className="b-body-header px-1 mx-1">
+                  {item.name}
+                </CButton>
+              ))}
             </div>
           </CRow>
         </CCol>
@@ -41,11 +43,11 @@ function HeaderBody(props) {
           {/* date */}
 
           <CRow className="pt-1">
-            <CCol xs={11}>
-              <CRow className="pt-3">
+            <CCol xs={11} className="py-3">
+              <CRow className="\">
                 <CCol className="">
                   <div class="d-flex bd-highlight">
-                    {props.section_1.map((item, index) => {
+                    {props.section_1?.map((item, index) => {
                       return (
                         <>
                           <div class="p-1 d-flex align-items-center justify-content-center bd-highlight w-100p">
@@ -57,7 +59,7 @@ function HeaderBody(props) {
                               className="header-select border-radius5"
                               aria-label="Small select example"
                             >
-                              <option>select</option>
+                              <option>Select</option>
                               {item.data.map((item_map, i) => {
                                 return (
                                   <option value={item_map.value} key={i}>
@@ -90,19 +92,29 @@ function HeaderBody(props) {
                         <CFormInput type="date" />
                       </div>
                       <div className="p-1 bd-highlight">
-                        <CButton style={{ width: "45px" }}>All</CButton>
+                        <CButton color="light" style={{ width: "45px" }}>
+                          All
+                        </CButton>
                       </div>
                       <div className="p-1 bd-highlight">
-                        <CButton style={{ width: "63px" }}>Today</CButton>
+                        <CButton color="light" style={{ width: "63px" }}>
+                          Today
+                        </CButton>
                       </div>
                       <div className="p-1 bd-highlight">
-                        <CButton style={{ width: "87px" }}>1 month</CButton>
+                        <CButton color="light" style={{ width: "87px" }}>
+                          1 month
+                        </CButton>
                       </div>
                       <div className="p-1 bd-highlight">
-                        <CButton style={{ width: "88px" }}>3 months</CButton>
+                        <CButton color="light" style={{ width: "88px" }}>
+                          3 months
+                        </CButton>
                       </div>
                       <div className="p-1 bd-highlight">
-                        <CButton style={{ width: "88px" }}>6 months</CButton>
+                        <CButton color="light" style={{ width: "88px" }}>
+                          6 months
+                        </CButton>
                       </div>
                     </div>
                   </div>
@@ -119,7 +131,7 @@ function HeaderBody(props) {
                         className="header-select border-radius5"
                         aria-label="Small select example"
                       >
-                        <option>select</option>
+                        <option>Select</option>
                         {props.section_3.data.map((item, index) => {
                           return (
                             <>
@@ -137,8 +149,13 @@ function HeaderBody(props) {
                 </CCol>
               </CRow>
             </CCol>
-            <CCol xs={1} className="p-1 d-flex align-items-center justify-content-center">
-              <CButton className="mt-2">Search</CButton>
+            <CCol
+              xs={1}
+              className="p-1 d-flex align-items-center justify-content-center"
+            >
+              <CButton color="light" className="mt-2">
+                Search
+              </CButton>
             </CCol>
           </CRow>
         </CCol>

@@ -48,14 +48,14 @@ function Home() {
       <Sidebar /> */}
       {/* <CContainer> */}
       {/* <CRow className="align-item-start w-100"> */}
-      <div class="d-flex bd-highlight px-4">
-        <div class="p-2 flex-shrink-1 bd-highlight home-slide-bar">
+      <div class="d-flex bd-highlight ">
+        <div class=" flex-shrink-1 bd-highlight home-slide-bar">
           <Sidebar />
         </div>
         <div class="p-2 w-100 bd-highlight">
           <div className="home-content">
             <Header />
-            <div style={{ marginTop: "73px", marginLeft: "40px" }}>
+            <div style={{ marginTop: "73px", marginLeft: "40px",marginRight:"10px" }}>
               <Body className="" />
             </div>
           </div>

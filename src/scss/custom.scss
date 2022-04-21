@@ -44,10 +44,7 @@
       background-color: #a2a1a57c;
     }
     Button  {
-      background-color: #fff;
-      border-color: #000;
-      font-size: 15px;
-      color: #000;
+      @extend .cs-button;
       font-family: 'Noto Sans KR' !important;
     }
     .header-select {
